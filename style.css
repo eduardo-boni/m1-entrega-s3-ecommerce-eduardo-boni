@@ -49,15 +49,15 @@ main {
     justify-content: space-around;
   
 }
-.nada h2 {
+.vazio h2 {
     margin-top: 150px;
 }
 .vitrine {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 400px;       
+    grid-auto-rows: 400px;    
 }
-  section .iten {
+  section .produto {
     margin-top: 18px;
     width: 300px;
     height: 380px;
@@ -66,12 +66,12 @@ main {
     align-items: center;
     flex-direction: column;
 }
-section .iten:hover {
+section .produto:hover {
     border-color: #2E245E;
     border-width: 2px;
     border-style: solid;
 }
-section .sobreIten {
+section .sobreProduto {
     width: 290px;
     height: 200px;
     padding: 15px;
@@ -111,7 +111,7 @@ section .valorProduto {
     font-size: 12px;
     margin-bottom: 15px;
 }
-.iten input {
+.produto input {
     text-align: start;
     border: none;
     color: #828282;
@@ -120,7 +120,7 @@ section .valorProduto {
     text-decoration: underline #828282;
     cursor: pointer;
 }
-.iten input:hover {
+.produto input:hover {
     color: #2E245E;
 }
 aside {
@@ -199,12 +199,12 @@ aside .addCarrinho {
     background-color: #F5F5F5;
     overflow: auto;
   }
-  .carrinho section {
+.carrinho section {
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
 }
-.carrinho .sobreIten {
+.carrinho .sobreProduto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -213,17 +213,17 @@ aside .addCarrinho {
     background-color: #F5F5F5;
     padding: 0px;
 }
-.carrinhoPic {
+.carrinhoImg {
     display: flex;
     align-items: center;
     width: 80px;
     height: 80px;
     background-color: #FFFFFF;
 }
-.carrinhoPic img {
+.carrinhoImg img {
     width: 100%;
 }
-.carrinho .nomeDoIten {
+.carrinho .nomeDoProduto {
     font-size: 18px;
     font-weight: bold;
     color: #333333;
