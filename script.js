@@ -55,7 +55,7 @@ function criarPadrao(){
     carrinho.innerHTML = 
     `<div class="conteudoCarrinho">
         <h3>Carrinho Vazio</h3>
-        <p class="addCarrinho">Adicionar iten</p>
+        <p class="addCarrinho">Adicionar item</p>
     </div>`;
     
 }
@@ -127,16 +127,16 @@ function carrinhoAdicionar(add){
         if(armazenadorNome === listaDeCards[i].nome){
             const iten = document.createElement("section")
             iten.className = "iten"
-            const carrinhoPic = document.createElement("div")
-            carrinhoPic.className = "carrinhoPic"
+            const carrinhoImg = document.createElement("div")
+            carrinhoImg.className = "carrinhoImg"
             const img = document.createElement("img")
             img.src = listaDeCards[i].url
             img.alt = listaDeCards[i].nome
-            const sobreIten = document.createElement("div")
-            sobreIten.className = "sobreIten"
-            const nomeDoIten = document.createElement("p")
-            nomeDoIten.className = "nomeDoIten"
-            nomeDoIten.innerText = listaDeCards[i].nome
+            const sobreItem = document.createElement("div")
+            sobreItem.className = "sobreItem"
+            const nomeDoItem = document.createElement("p")
+            nomeDoItem.className = "nomeDoItem"
+            nomeDoItem.innerText = listaDeCards[i].nome
             const valor = document.createElement("span")
             valor.className = "valorProduto"
             valor.innerText = `R$ ${listaDeCards[i].preco.toFixed(2)}`
@@ -144,12 +144,12 @@ function carrinhoAdicionar(add){
             botao.type = "button"
             botao.value = "Remover Produto"
 
-            sobreIten.appendChild(nomeDoIten)
-            sobreIten.appendChild(valor)
-            sobreIten.appendChild(botao)
-            carrinhoPic.appendChild(img)
-            iten.appendChild(carrinhoPic)
-            iten.appendChild(sobreIten)
+            sobreItem.appendChild(nomeDoItem)
+            sobreItem.appendChild(valor)
+            sobreItem.appendChild(botao)
+            carrinhoImg.appendChild(img)
+            iten.appendChild(carrinhoImg)
+            iten.appendChild(sobreItem)
             carrinho.appendChild(iten)
             arrayCarrinho.push(listaDeCards[i].nome)
             preco.push(listaDeCards[i].preco)
