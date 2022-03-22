@@ -1,62 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+
+body{
+    font-family: Inter;
 }
-html {
-    font-family:'Inter', sans-serif;
-}
-main {
+main{
     display: flex;
 }
 /** cabeçalho **/
 header{
     position: absolute;
-    width: 1603px;
+    width: 100%;
     height: 70px;
     left: -3px;
     top: 0px;
-    background: #F5F5F5;
+    display: flex;
+    justify-content: space-between;    
+    background-color: #F5F5F5;
 }
-.menu {
-    float:none;
+h2 {
+    margin-left: 118px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 24px;
+    color: #000000;
 }
 .nav-menu{
     display: flex;
-    justify-content:right;
-    width: 346px;
-    height: 16px;
+    gap: 20px;
     list-style: none;
-}
-.cabecalho-menu-item {
+    margin-right: 117px;
+    margin-top: 27px;
+    text-decoration: underline;
     text-decoration: none;
+    color: #828282;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+.nav-first {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
     color: #333333;
     margin-right: 117px;
 }
-.cabecalho-menu-item:hover {
-    text-decoration: underline;
-}
-.carrinho {
+.carrinho{
     display: flex;
     flex-direction: column;
 }
-.first-column, .second-column {
+.produtos{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 60px;
 }
-
-.card {
-    margin: 20px;
+.first-column, .second-column{
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
-
-.produtos {
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 88px;
+.card{
+    margin: 18px;
+    background-color: #f5f5f5;
 }
-
-.categoria {
+img {
+    display: flex; 
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto
+}
+.categoria{
     font-size: 12px;
     background-color: #2e245e;
     color:#FFFFFF;
@@ -65,51 +84,47 @@ header{
     margin: 15px;
     text-align: center;
 }
-.titulo-produto {
+.titulo-produto{
     font-size: 18px;
     color:#333333;
     font-weight: bold;
     margin: 15px;
 }
 
-.produto-conteudo {
+.produto-conteudo{
     font-size: 12px;
-    color:#828282;
+    color: #828282;
     margin: 15px;
 }
 
-.produto-preco {
+.produto-preco{
     font-size: 12px;
     color: #2e245e;
     font-weight: 600;
     margin: 15px;
 }
 .carrinho {
-    margin-top: 97px;
+    margin-top: 87px;
 }
-.produto-carrinho {
+.produto-carrinho{
     font-size: 14px;
     font-weight: 500px;
     color: #828282;
     margin: 15px;
     text-decoration-line: underline;
 }
-
 .caixa-pesquisa {
-    width: 200px;
-    height: 45px;
-    background-color: #F5F5F5;
-    border: none;
+    width: 228px;
+    height: 50px;
+    border: 1px solid #F5F5F5;
     color: #828282;
-    margin-right: 5px;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
-
+.caixa-pesquisa, .placeholder {
+    padding-left: 14px;
+}
 .btn_pesquisar {
     border: none;
     background-color: #6B54DE;
-    ;
     color: #ffffff;
     width: 96px;
     height: 50px;
@@ -118,47 +133,55 @@ header{
 .carrinho-principal {
     width: 347px;
     height: 50px;
-    left: 1138px;
-    top: 157px;
-    background-color: #6B54DE;
+    margin-top: 10px;
+    background: #6B54DE;
 }
 
 .carrinho-conteudo {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content:center;
-    margin-top: 100px;
-    background-color: #F5F5F5;
-}
-
-.titulo-carrinho {
+    position: absolute;
     width: 347px;
-    height: 50px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 16px;
+    height: 344px;
+    top: 211px;
+    background: #F5F5F5;
 }
-.texto-carrinho {
+.titulo-carrinho {
     width: 185px;
     height: 24px;
-    line-height: 24px;
-    font-size: 18px;
+    font-family: 'Inter';
+    font-style: normal;
     font-weight: 700;
-    font-family: Inter;
+    font-size: 18px;
+    line-height: 24px;
+}
+.titulo-carrinho p {
+    margin: 13px 81px;
     color: #FFFFFF;
+    white-space: nowrap;
 }
-
-.carrinho-conteudo h2 {
+.carrinho-conteudo {
+    width: 347px;
+    height: 344px;
+    background-color: #F5F5F5;
+}
+.carrinho-conteudo h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
     font-size: 22px;
+    line-height: 24px;
     color: #333333;
+    margin-left: 90px;
+    margin-top: 118px;
+    white-space: nowrap;
 }
-
-.carrinho-conteudo p {
+.carrinho-conteudo p{
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
+    line-height: 16px;
     color: #828282;
+    margin-left: 128px;
+    margin-top: 0px;
 }
