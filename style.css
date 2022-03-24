@@ -1,186 +1,189 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
+* {
+  margin: 0 ;
+  outline: 0;
+  box-sizing: border-box;
+}
 body{
-    font-family: Inter;
+    font-family: inter;
+}
+header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5;
+}
+.menu {
+    margin-right: 97px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+}
+.menu button {
+    border: none;
+    margin: 0px 20px;
+    margin-left: 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: #828282;
+    background-color: #F5F5F5;
+}
+.menu button:hover {
+    font-weight: 600;
+    color: #828282;
+}
+.nav-first {
+    font-weight: 600;
+    color: #333333;
+}
+h1{
+    margin-left: 118px;
+    font-size: 30px;
+    line-height: 24px;
 }
 main{
     display: flex;
+    justify-content: space-around;
 }
-/** cabeçalho **/
-header{
-    position: absolute;
-    width: 100%;
-    height: 70px;
-    left: -3px;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;    
-    background-color: #F5F5F5;
-}
-h2 {
-    margin-left: 118px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 24px;
-    color: #000000;
-}
-.nav-menu{
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin-right: 117px;
-    margin-top: 27px;
-    text-decoration: underline;
-    text-decoration: none;
-    color: #828282;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 16px;
-}
-.nav-first {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-    color: #333333;
-}
-.carrinho{
-    display: flex;
-    flex-direction: column;
-}
-.produtos{
+.produtos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 60px;
+    justify-content:space-evenly;
+    column-gap: 10px;
 }
-.first-column, .second-column{
+.card {
     display: flex;
-    justify-content: center;
-    margin: auto;
-}
-.card{
-    margin: 18px;
-    background-color: #f5f5f5;
-}
-img {
-    display: flex; 
-    justify-content: center;
-    margin-left: auto; 
-    margin-right: auto
-}
-.categoria{
-    font-size: 12px;
-    background-color: #2e245e;
-    color:#FFFFFF;
-    max-width: 85px;
-    padding: 5.75px;
-    margin: 15px;
-    text-align: center;
-}
-.titulo-produto{
-    font-size: 18px;
-    color:#333333;
-    font-weight: bold;
-    margin: 15px;
-}
-
-.produto-conteudo{
-    font-size: 12px;
-    color: #828282;
-    margin: 15px;
-}
-
-.produto-preco{
-    font-size: 12px;
-    color: #2e245e;
-    font-weight: 600;
-    margin: 15px;
-}
-.carrinho {
-    margin-top: 87px;
-}
-.produto-carrinho{
-    font-size: 14px;
-    font-weight: 500px;
-    color: #828282;
-    margin: 15px;
-    text-decoration-line: underline;
-}
-.caixa-pesquisa {
-    width: 228px;
-    height: 50px;
+    align-items:center;
+    flex-direction: column;
     border: 1px solid #F5F5F5;
+    margin-bottom: 15px;
+    margin-top: 18px;
+    width: 297px;
+    background-color: #F5F5F5;
+}
+.sobreCard {
+    width: 295px;
+    height: 215px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.categoria {
+    width: 73px;
+    height: 26px;
+    color: #FFFFFF;
+    background-color: #2E245E;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 2px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.titulo-produto {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.produto-conteudo {
+    font-size: 12px;
+    width: 269px;
+    height: 33px;
     color: #828282;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
-.caixa-pesquisa, .placeholder {
-    padding-left: 14px;
+.produto-preco {
+    color: #2E245E;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 15px;
 }
-.btn_pesquisar {
+.card input{
+    text-align: start;
     border: none;
-    background-color: #6B54DE;
-    color: #ffffff;
+    color: #828282;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    text-decoration: underline #828282;
+    cursor: pointer;
+}
+.card input:hover{
+    color: #2E245E;
+}
+aside { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 27px;
+    width: 347px;
+    height: 462px;   
+}
+.pesquisa {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.pesquisa input {
+    margin-right: 4px;
+    width: 246px;
+    height: 50px;
+    background-color: #F5F5F5;
+    border: none;
+    font-size: 14px;
+    color: #828282;
+    font-weight: 400;
+    padding: 17px 12px;
+}
+button {
+    margin-left: 3px;
     width: 96px;
     height: 50px;
+    background-color: #6B54DE;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    cursor: pointer;
 }
-
-.carrinho-principal {
+button:hover {
+    color: #333333;
+}
+.tituloCarrinho{
     width: 347px;
     height: 50px;
-    margin-top: 10px;
-    background: #6B54DE;
+    text-align: center;
+    line-height: 35px;
+    background-color: #6B54DE;
 }
 
-.carrinho-conteudo {
-    position: absolute;
-    width: 347px;
-    height: 344px;
-    top: 211px;
-    background: #F5F5F5;
-}
-.titulo-carrinho {
-    width: 185px;
-    height: 24px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
+.tituloCarrinho h2 {
     font-size: 18px;
-    line-height: 24px;
-}
-.titulo-carrinho p {
-    margin: 13px 81px;
+    font-weight: 700;
     color: #FFFFFF;
-    white-space: nowrap;
+    margin-top: 6px;
 }
-.carrinho-conteudo {
+aside .conteudoCarrinho {
     width: 347px;
     height: 344px;
     background-color: #F5F5F5;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
 }
-.carrinho-conteudo h2{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
+aside h3 {
+    font-weight: bold;
     font-size: 22px;
-    line-height: 24px;
     color: #333333;
-    margin-left: 90px;
-    margin-top: 118px;
-    white-space: nowrap;
 }
-.carrinho-conteudo p{
-    position: absolute;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+aside .addCarrinho {
     font-size: 14px;
-    line-height: 16px;
     color: #828282;
-    margin-left: 128px;
-    margin-top: 0px;
 }
