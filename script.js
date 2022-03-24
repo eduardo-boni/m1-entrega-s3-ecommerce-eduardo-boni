@@ -1,6 +1,6 @@
 const arrayProdutos = []
-const arrcarrinho = []
-const prego = []
+const arrayCarrinho = []
+const valorPreco = []
 const produtos = document.querySelector(".produtos")
 const vazio = document.querySelector(".vazio")
 const carrinho = document.querySelector(".carrinho")
@@ -61,9 +61,10 @@ function criarPadrao(){
     
 }
 criarPadrao()
+
 const carrinhoPadrao = document.querySelector(".conteudoCarrinho")
 
-function criarCard(){
+function ProdutosListar(){
     vazio.remove()
     for(let i = 0; i < Cards.length; i++){
     const card = document.createElement("div")
@@ -104,24 +105,27 @@ function criarCard(){
     }
     
 }
-criarCard()
+ProdutosListar()
 //Carrinho
 
 let value = 0
-produtos.addEventListener('click', addCarrinho)
-function addCarrinho(add){
+produtos.addEventListener('click', carrinhoAdicionar)
+function carrinhoAdicionar(add){
     const addCar = add.target;
     const card = addCar.parentElement
     const armazenadorNome = card.children[1].textContent
+
     if(addCar.className === 'addCar'){
-        if(arrcarrinho.length == 0){
+        if(arrayCarrinho.length == 0){
             const carrinhoPadrao = document.querySelector(".conteudoCarrinho")
             carrinhoPadrao.remove()
             valorBarr()
         } 
     } 
-    for(i = 0; i < Cards.length; i++){
+    for(let i = 0; i < Cards.length; i++){
+
         if(armazenadorNome === Cards[i].nome){
+
             const card = document.createElement("section")
             card.className = "card"
             const carrinhoImg = document.createElement("div")
@@ -141,7 +145,6 @@ function addCarrinho(add){
             botao.type = "button"
             botao.value = "Remover Produto"
 
-
             sobreCard.appendChild(tituloProduto)
             sobreCard.appendChild(valor)
             sobreCard.appendChild(botao)
@@ -149,44 +152,42 @@ function addCarrinho(add){
             card.appendChild(carrinhoImg)
             card.appendChild(sobreCard)
             carrinho.appendChild(card)
-            arrcarrinho.push(Cards[i].nome)
-            prego.push(Cards[i].preco)
+            arrayCarrinho.push(Cards[i].nome)
+            valorPreco.push(Cards[i].preco)
+
             value = 0
-            for(let i = 0; i< prego.length ;i++){
-                console.log(prego[i])
-                value += prego[i]
+            for(let i = 0; i < valorPreco.length; i++){
+                console.log(valorPreco[i])
+                value += valorPreco[i]
             }
             valorBarr(value)
         }
     } 
 }
-carrinho.addEventListener('click', rmvCarrinhoButton)
-function rmvCarrinhoButton(rmv){
-    /*console.log(carrinho[0])
-    carrinho.filter((produto)=> produto !== rmvCar)
-    console.log(carrinho)*/
-    const rmvCar = rmv.target/*.closest("section")*/
+carrinho.addEventListener('click', carrinhoExcluir)
+
+function carrinhoExcluir(rmv){
+    
+    const rmvCar = rmv.target
     const card = rmvCar.parentElement
     const cardtotal = card.parentElement
     const armazenadorNome = card.children[0].textContent
     
     if(rmvCar.tagName == 'INPUT'){
-        for(let i = 0; i < arrcarrinho.length; i++){
-
-            if(armazenadorNome === arrcarrinho[i]){
+        for(let i = 0; i < arrayCarrinho.length; i++){
+            if(armazenadorNome === arrayCarrinho[i]){
                 cardtotal.remove()
-                arrcarrinho.splice(i, 1)
-                prego.splice(i,1)
+                arrayCarrinho.splice(i, 1)
+                valorPreco.splice(i,1)
                 value = 0
-                for(let i = 0; i< prego.length ;i++){
-
-                    value += prego[i]
+                for(let i = 0; i < valorPreco.length ;i++){
+                    value += valorPreco[i]
                 }
                 valorBarr(value)
             }   
         }
     }
-    if(arrcarrinho.length == 0){
+    if(arrayCarrinho.length == 0){
         const  total = document.querySelector(".total")
         total.remove()
         criarPadrao()
@@ -203,7 +204,7 @@ function valorBarr(value){
     const valorT = document.createElement("div")
     valorT.className = "valorTotal"
     const spanQ = document.createElement("span")
-    spanQ.innerText = prego.length
+    spanQ.innerText = valorPreco.length
     const pQ = document.createElement("p")
     pQ.innerText = "Quantidade:"
     const quantidade = document.createElement("div")
